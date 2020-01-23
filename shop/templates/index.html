@@ -110,85 +110,22 @@
                             <!-- tab -->
                             <div id="tab1" class="tab-pane active">
                                 <div class="products-slick" data-nav="#slick-nav-1">
-                                    <!-- product -->
-                                    <div class="product">
-                                        <div class="product-img">
-                                            <img src="{% static '/img/product01.png'%}" alt="">
+                                    {% for product in product_list %}
+                                        <!-- product -->
+                                        <div class="product">
+                                            <div class="product-img">
+                                                <img src="{{ product.image.url }}" alt="">
+                                            </div>
+                                            <div class="product-body">
+                                                <h3 class="product-name"><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h3>
+                                                <h4 class="product-price">{{ product.price }}</h4>
+                                            </div>
+                                            <div class="add-to-cart">
+                                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                            </div>
                                         </div>
-                                        <div class="product-body">
-                                            <p class="product-category">Category</p>
-                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                                        </div>
-                                        <div class="add-to-cart">
-                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                                        </div>
-                                    </div>
-                                    <!-- /product -->
-
-                                    <!-- product -->
-                                    <div class="product">
-                                        <div class="product-img">
-                                            <img src="{% static '/img/product02.png' %}" alt="">
-                                        </div>
-                                        <div class="product-body">
-                                            <p class="product-category">Category</p>
-                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                                        </div>
-                                        <div class="add-to-cart">
-                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                                        </div>
-                                    </div>
-                                    <!-- /product -->
-
-                                    <!-- product -->
-                                    <div class="product">
-                                        <div class="product-img">
-                                            <img src="{% static '/img/product03.png ' %}" alt="">
-                                        </div>
-                                        <div class="product-body">
-                                            <p class="product-category">Category</p>
-                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                                        </div>
-                                        <div class="add-to-cart">
-                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                                        </div>
-                                    </div>
-                                    <!-- /product -->
-
-                                    <!-- product -->
-                                    <div class="product">
-                                        <div class="product-img">
-                                            <img src="{% static '/img/product04.png' %}" alt="">
-                                        </div>
-                                        <div class="product-body">
-                                            <p class="product-category">Category</p>
-                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                                        </div>
-                                        <div class="add-to-cart">
-                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                                        </div>
-                                    </div>
-                                    <!-- /product -->
-
-                                    <!-- product -->
-                                    <div class="product">
-                                        <div class="product-img">
-                                            <img src="{% static '/img/product05.png' %}" alt="">
-                                        </div>
-                                        <div class="product-body">
-                                            <p class="product-category">Category</p>
-                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                                        </div>
-                                        <div class="add-to-cart">
-                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                                        </div>
-                                    </div>
-                                    <!-- /product -->
+                                        <!-- /product -->
+                                    {% endfor %}
                                 </div>
                                 <div id="slick-nav-1" class="products-slick-nav"></div>
                             </div>

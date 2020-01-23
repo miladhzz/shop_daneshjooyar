@@ -26,7 +26,7 @@ class Order(models.Model):
     order_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 
 class OrderItem(models.Model):
@@ -37,7 +37,7 @@ class OrderItem(models.Model):
     product_cost = models.DecimalField(max_digits=10, decimal_places=0)
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 
 class Invoice(models.Model):
@@ -45,7 +45,7 @@ class Invoice(models.Model):
     invoice_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 
 class Transaction(models.Model):
@@ -60,4 +60,4 @@ class Transaction(models.Model):
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
 
     def __str__(self):
-        return self.id
+        return str(self.id)
