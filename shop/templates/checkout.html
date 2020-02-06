@@ -60,26 +60,28 @@
 								<div><strong>TOTAL</strong></div>
 							</div>
 							<div class="order-products">
-								<div class="order-col">
-									<div>1x Product Name Goes Here</div>
-									<div>$980.00</div>
-								</div>
-								<div class="order-col">
-									<div>2x Product Name Goes Here</div>
-									<div>$980.00</div>
-								</div>
+                                {% for item in cart %}
+                                    <div class="order-col">
+                                        <div>{{ item.product_count }}X {{ item.product.name }}</div>
+                                        <div>${{ item.total_price }}</div>
+                                    </div>
+                                {% endfor %}
 							</div>
 
 							<div class="order-col">
 								<div><strong>TOTAL</strong></div>
-								<div><strong class="order-total">$2940.00</strong></div>
+								<div><strong class="order-total">${{ cart.get_total_price }}</strong></div>
 							</div>
 						</div>
 
 						<div class="input-checkbox">
 							<input type="checkbox" id="terms">
 						</div>
-						<a href="#" class="primary-btn order-submit">Place order</a>
+                        <form action="." method="post">
+                            {% csrf_token %}
+                            <input class="primary-btn order-submit" type="submit" value="Place Order">
+                        </form>
+
 					</div>
 					<!-- /Order Details -->
 				</div>

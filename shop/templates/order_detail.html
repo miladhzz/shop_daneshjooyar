@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Order Detail {% endblock %}
+{% block content %}
+		<!-- BREADCRUMB -->
+		<div id="breadcrumb" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<h3 class="breadcrumb-header">Order Detail</h3>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /BREADCRUMB -->
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- Order Details -->
+					<div class="col-md-12 order-details">
+						<div class="section-title text-center">
+							<h3 class="title">Thank you</h3>
+						</div>
+						<div class="order-summary">
+							<p>Your order number: {{ order.id }}</p>
+						</div>
+                        <form action="." method="post">
+                            {% csrf_token %}
+                            <input class="primary-btn order-submit" value="Online Payment">
+                        </form>
+
+					</div>
+					<!-- /Order Details -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+{% endblock %}
