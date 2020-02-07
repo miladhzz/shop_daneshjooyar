@@ -153,22 +153,22 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        # For each OAuth based provider, either add a ``SocialApp``
-        # (``socialaccount`` app) containing the required client
-        # credentials, or list them here:
-        'APP': {
-            'client_id': '123',
-            'secret': '456',
-            'key': ''
-        }
-    }
-}
+# SOCIALACCOUNT_PROVIDERS = {
+#     'google': {
+#         # For each OAuth based provider, either add a ``SocialApp``
+#         # (``socialaccount`` app) containing the required client
+#         # credentials, or list them here:
+#         'APP': {
+#             'client_id': '430821148993-0ohc9naai54fqj8bsjq45j9uut2hjaqb.apps.googleusercontent.com',
+#             'secret': '0nd--VQWRnhSqhTIkXeTq0xh',
+#             'key': ''
+#         }
+#     }
+# }
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'daneshjooyar.hatami@gmail.com'
-EMAIL_HOST_PASSWORD = '***************'
+EMAIL_HOST_PASSWORD = '*******************'
