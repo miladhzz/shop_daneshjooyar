@@ -10,5 +10,6 @@ urlpatterns = [
     path('product/<int:pk>/', views.product, name='product'),
     path('store/', views.store, name='store'),
     path('login/', auth_views.LoginView.as_view(), name='login'),
-
+    path('to-bank/<int:order_id>/', views.to_bank, name='to_bank'),
+    path('callback/', views.callback, name='callback'),
 ]

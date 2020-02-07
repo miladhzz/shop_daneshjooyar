@@ -43,6 +43,7 @@ class OrderItem(models.Model):
 class Invoice(models.Model):
     order = models.ForeignKey(Order, null=True, on_delete=models.SET_NULL)
     invoice_date = models.DateTimeField(auto_now_add=True)
+    authority = models.CharField(max_length=200, blank=True, null=True)
 
     def __str__(self):
         return str(self.id)

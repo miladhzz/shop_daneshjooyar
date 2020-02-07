@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %} Order Detail {% endblock %}
+{% block title %} Callback {% endblock %}
 {% block content %}
 		<!-- BREADCRUMB -->
 		<div id="breadcrumb" class="section">
@@ -10,7 +10,7 @@
 				<!-- row -->
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="breadcrumb-header">Order Detail</h3>
+						<h3 class="breadcrumb-header">Payment Detail</h3>
 					</div>
 				</div>
 				<!-- /row -->
@@ -31,9 +31,8 @@
 							<h3 class="title">Thank you</h3>
 						</div>
 						<div class="order-summary">
-							<p>Your order number: {{ order.id }}</p>
+							<p>Your Invoice number: {{ invoice.id }}</p>
 						</div>
-                        <a href="{% url 'shop:to_bank' order.id %}" class="primary-btn order-submit">Online Payment</a>
 
 					</div>
 					<!-- /Order Details -->
